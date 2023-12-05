@@ -1,0 +1,71 @@
+{
+	"name": "demo-cache",
+	"displayName": "demo for cache problem",
+	"description": "Demo For Cache Problem",
+	"version": "0.0.3",
+	"publisher": "micsoft",
+	"logo": "$(star-full)",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "extension.starttest",
+				"title": "StartTest"
+			},
+			{
+				"command": "extension.endtest",
+				"title": "EndTest"
+			},
+			{
+				"command": "extension.starttest2",
+				"title": "StartTest2"
+			},
+			{
+				"command": "extension.endtest2",
+				"title": "EndTest2"
+			}
+		],
+		"views": {
+			"demo": [
+				{
+					"id": "exampleTreeView",
+					"name": "Example Tree View"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "demo",
+					"title": "Demo",
+					"icon": "$(star-full)"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "^1.73.0",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"typescript": "^5.0.2"
+	}
+}
