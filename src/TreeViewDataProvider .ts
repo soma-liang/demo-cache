@@ -40,11 +40,11 @@ export class TreeDataProvider implements vscode.TreeDataProvider<TreeNode> {
         this._onDidChangeTreeData.fire(undefined);
     }
 
-    dispose(): void {
-        this._onDidChangeTreeData.dispose(); // dispose the event emitter
-        // 重新注册事件监听器
-        this._onDidChangeTreeData = new vscode.EventEmitter<TreeNode | undefined>();
-    }
+    // dispose(): void {
+    //     this._onDidChangeTreeData.dispose(); // dispose the event emitter
+    //     // 重新注册事件监听器
+    //     this._onDidChangeTreeData = new vscode.EventEmitter<TreeNode | undefined>();
+    // }
 
 }
 

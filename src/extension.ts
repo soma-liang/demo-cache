@@ -44,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.commands.registerCommand('extension.starttest2', () => {
 		timerTree = setInterval(() => {
-			tree.provider.dispose()
+			// tree.provider.dispose()
 			tree.provider.tree.forEach(t => {
 				t.label = new Date().toISOString()
 				t.getIconUriForLabel()
