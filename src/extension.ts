@@ -15,7 +15,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let timerOut: NodeJS.Timer | undefined
 	let timerTree: NodeJS.Timer | undefined
+	let timerStatus: NodeJS.Timer | undefined
 	let outputManager: OutputManager | undefined
+	let statusBarItem: vscode.StatusBarItem
 	const tree = new DemoTreeView(context)
 	for (let index = 0; index < 100; index++) {
 		tree.provider.tree.push(new TreeNode(index.toString()))
@@ -58,5 +60,33 @@ export function activate(context: vscode.ExtensionContext) {
 			clearInterval(timerTree)
 		}
 	}))
+
+
+	context.subscriptions.push(vscode.commands.registerCommand('extension.starttest3', () => {
+		timerStatus = setInterval(() => {
+			// 设置StatusBarItem的文本和颜色
+			// statusBarItem.text = `$(star) ${new Date().toISOString()}`;
+			// statusBarItem.color = 'white';
+			// 设置状态栏项的文本和图标
+			const statusBarItemText = `${new Date().toISOString()}`;
+			const statusBarItemIcon = '$(chip)';
+			statusBarItem.color = 'black'
+			statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground')
+			statusBarItem.text = `${statusBarItemIcon} ${statusBarItemText}`;
+		}, 200)
+	}))
+
+	context.subscriptions.push(vscode.commands.registerCommand('extension.endtest3', () => {
+		if (timerStatus !== undefined) {
+			clearInterval(timerStatus)
+		}
+	}))
+	statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+
+
+	// 设置状态栏项的文本和图标
+	// 将StatusBarItem添加到状态栏
+	statusBarItem.show();
+
 
 }

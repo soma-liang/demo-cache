@@ -2,7 +2,7 @@
 	"name": "demo-cache",
 	"displayName": "demo for cache problem",
 	"description": "Demo For Cache Problem",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "micsoft",
 	"logo": "$(star-full)",
 	"engines": {
@@ -34,6 +34,14 @@
 			{
 				"command": "extension.endtest2",
 				"title": "EndTest2"
+			},
+			{
+				"command": "extension.starttest3",
+				"title": "StartTest3"
+			},
+			{
+				"command": "extension.endtest3",
+				"title": "EndTest3"
 			}
 		],
 		"views": {
