@@ -32,8 +32,14 @@ export function activate(context: vscode.ExtensionContext) {
 	}))
 
 	context.subscriptions.push(vscode.commands.registerCommand('extension.starttest', () => {
+		let i = 0
 		timerOut = setInterval(() => {
+			i++
 			outputManager?.appendLine(new Date().toISOString())
+			if (i > 1000) {
+				outputManager?.clear()
+				i = 0
+			}
 		}, 10)
 	}))
 

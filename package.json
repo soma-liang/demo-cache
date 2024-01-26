@@ -2,7 +2,7 @@
 	"name": "demo-cache",
 	"displayName": "demo for cache problem",
 	"description": "Demo For Cache Problem",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "micsoft",
 	"logo": "$(star-full)",
 	"engines": {
