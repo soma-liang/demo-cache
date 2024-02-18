@@ -23,12 +23,14 @@ export function activate(context: vscode.ExtensionContext) {
 		tree.provider.tree.push(new TreeNode(index.toString()))
 	}
 
+	outputManager = new OutputManager(context)
+	
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	context.subscriptions.push(vscode.commands.registerCommand('extension.helloWorld', () => {
 		vscode.window.showInformationMessage('Hello World!');
-		outputManager = new OutputManager(context)
+		// outputManager = new OutputManager(context)
 	}))
 
 	context.subscriptions.push(vscode.commands.registerCommand('extension.starttest', () => {
